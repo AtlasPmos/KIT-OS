@@ -1,1 +1,10 @@
-export default function Home(){return(<main style={{padding:24}}><h1>KINTA-OS</h1><p>Sprint 1 GitHub Ready Scaffold</p></main>)}
+export default function Page() {
+  return (
+    <div>
+      <h1>AI Review Queue</h1>
+      <section className="card">
+        <p>AI Review Queue foundation is ready for Sprint 1B implementation.</p>
+      </section>
+    </div>
+  );
+}

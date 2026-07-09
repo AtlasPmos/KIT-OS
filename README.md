@@ -1,4 +1,6 @@
-# KINTA-OS Sprint 1
+# KINTA-OS / KIT-OS
+
+Sprint 1A Repository & Infrastructure build.
 
 ## Quick Start
 
@@ -7,4 +9,16 @@ npm install
 npm run dev
 ```
 
-Push this folder to a GitHub repository, then connect it to Vercel or another Next.js host.
+## What this adds
+
+- Next.js App Router
+- KINTA sidebar navigation
+- Atlas Command Center dashboard
+- Wylie starter project data
+- Equipment DNA starter page
+- Database migration scaffold
+- GitHub Actions CI
+
+## Deployment
+
+Use Vercel for the live application. GitHub Pages should only be used for static documentation.

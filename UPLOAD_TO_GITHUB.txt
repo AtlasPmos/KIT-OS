@@ -1,0 +1,9 @@
+KINTA Sprint 1A - GitHub Upload
+
+1. Unzip this file.
+2. Open the folder named 'KIT-OS'.
+3. Upload the ENTIRE contents of that folder to the root of your GitHub repository.
+4. Commit the changes.
+5. Connect the repository to Vercel for deployment (recommended).
+
+This package is organized as a single folder for easy upload.

@@ -1,10 +1,2 @@
-export default function Page() {
-  return (
-    <div>
-      <h1>AI Review Queue</h1>
-      <section className="card">
-        <p>AI Review Queue foundation is ready for Sprint 1B implementation.</p>
-      </section>
-    </div>
-  );
-}
+import {getAiReviewItems} from "../../lib/data";
+export default async function AiReviewPage(){const items:any[]=await getAiReviewItems();return <div><h1>AI Review Queue</h1><div className="grid">{items.map(i=><section className="card" key={i.id}><span className="badge">{i.project_name}</span><h2>{i.title}</h2><p>{i.summary}</p><p>{i.action}</p><p><strong>{i.status}</strong></p></section>)}</div></div>}

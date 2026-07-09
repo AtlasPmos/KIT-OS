@@ -1,24 +1,24 @@
 # KINTA-OS / KIT-OS
 
-Sprint 1A Repository & Infrastructure build.
+Usable Work Alpha — Sprint 1I to 2A combined.
 
-## Quick Start
+## Upload
+Upload everything inside this `KIT-OS` folder to the root of your GitHub repository.
 
-```bash
-npm install
-npm run dev
-```
+## Completed High-Priority Usability Items
+1. Startup Center readiness/blocker workflow
+2. Connected project data model across equipment/documents/startup/review
+3. Auth/storage scaffolds retained with Supabase support
+4. Interactive clickable Digital Kitchen foundation
+5. Project Brain querying live/fallback project data
 
-## What this adds
+## Try These Routes
+- `/startup`
+- `/digital-kitchen`
+- `/project-brain`
+- `/equipment/2170`
+- `/equipment/0063`
+- `/documents`
 
-- Next.js App Router
-- KINTA sidebar navigation
-- Atlas Command Center dashboard
-- Wylie starter project data
-- Equipment DNA starter page
-- Database migration scaffold
-- GitHub Actions CI
-
-## Deployment
-
-Use Vercel for the live application. GitHub Pages should only be used for static documentation.
+## Next
+Deploy to Vercel + connect Supabase to move from fallback mode to persistent work alpha.

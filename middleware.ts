@@ -1,0 +1,4 @@
+import {NextResponse} from "next/server";import type {NextRequest} from "next/server";
+const protectedRoutes=["/dashboard","/projects","/equipment","/documents","/ai-review","/startup","/warranty","/reports","/digital-kitchen","/project-brain"];
+export function middleware(request:NextRequest){const enforce=process.env.KINTA_AUTH_ENFORCED==="true";const isProtected=protectedRoutes.some(route=>request.nextUrl.pathname.startsWith(route));if(!enforce||!isProtected)return NextResponse.next();const token=request.cookies.get("kinta_access_token")?.value;if(!token){const loginUrl=new URL("/login",request.url);loginUrl.searchParams.set("next",request.nextUrl.pathname);return NextResponse.redirect(loginUrl)}return NextResponse.next()}
+export const config={matcher:["/dashboard/:path*","/projects/:path*","/equipment/:path*","/documents/:path*","/ai-review/:path*","/startup/:path*","/warranty/:path*","/reports/:path*","/digital-kitchen/:path*","/project-brain/:path*"]};

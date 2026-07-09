@@ -1,0 +1,1 @@
+export default function StatCard({title,value,note,tone}:{title:string;value:string|number;note:string;tone?:string}){return <section className="card"><h2>{title}</h2><p className={tone||""} style={{fontSize:36,margin:0}}>{value}</p><p className="muted">{note}</p></section>}

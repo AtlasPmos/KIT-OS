@@ -1,0 +1,9 @@
+import {hasSupabaseServerEnv,supabaseServer} from "./supabaseServer";
+import {fallbackProjects,fallbackEquipment,fallbackDocuments,fallbackAiReview,fallbackStartupTasks} from "./mockData";
+export async function getProjects(){if(!hasSupabaseServerEnv())return fallbackProjects;const {data,error}=await supabaseServer().from("projects").select("*").order("name");return error?fallbackProjects:data}
+export async function getEquipment(){if(!hasSupabaseServerEnv())return fallbackEquipment;const {data,error}=await supabaseServer().from("equipment").select("*").order("item_number");return error?fallbackEquipment:data}
+export async function getEquipmentByItem(itemNumber:string){if(!hasSupabaseServerEnv())return fallbackEquipment.find(e=>e.item_number===itemNumber)||null;const {data,error}=await supabaseServer().from("equipment").select("*").eq("item_number",itemNumber).single();return error?fallbackEquipment.find(e=>e.item_number===itemNumber)||null:data}
+export async function getDocuments(){if(!hasSupabaseServerEnv())return fallbackDocuments;const {data,error}=await supabaseServer().from("documents").select("*").order("created_at",{ascending:false});return error?fallbackDocuments:data}
+export async function getDocumentsForItem(itemNumber:string){const docs:any[]=await getDocuments();return docs.filter(d=>d.linked_equipment_item===itemNumber)}
+export async function getAiReviewItems(){if(!hasSupabaseServerEnv())return fallbackAiReview;const {data,error}=await supabaseServer().from("ai_review_items").select("*").order("created_at",{ascending:false});return error?fallbackAiReview:data}
+export async function getStartupTasks(){if(!hasSupabaseServerEnv())return fallbackStartupTasks;const {data,error}=await supabaseServer().from("startup_tasks").select("*").order("created_at",{ascending:false});return error?fallbackStartupTasks:data}
